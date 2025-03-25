@@ -9,6 +9,12 @@ Works with [Google Sheets](https://sheets.google.com/),
 
 <br />
 
+<p align="center">
+    <img src="./art.jpg" alt="measurements" />
+</p>
+
+<br />
+
 
 ## documentation
 
