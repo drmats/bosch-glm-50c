@@ -23,19 +23,37 @@ Works with [Google Sheets](https://sheets.google.com/),
 <br />
 
 
-## installation
+## usage (linux)
+
+* install dependencies
+    ```bash
+    $ ./do bootstrap
+    ```
+
+* scan for nearby bluetooth devices
+    ```bash
+    $ ./do run glm50c
+    ```
+
+* connect to rangefinder and emulate keyboard inputs
+    ```bash
+    $ ./do run glm50c XX:XX:XX:XX:XX:XX
+    ```
+
+<br />
+
+
+### manual installation
 
 ```bash
 $ virtualenv ./.venv/
 $ . ./.venv/bin/activate
 $ pip install --upgrade pip
-$ pip install evdev pybluez
+$ pip install -r requirements.txt
 ```
 
-<br />
 
-
-## quickstart
+### manual quickstart
 
 ```bash
 $ python glm50c.py
