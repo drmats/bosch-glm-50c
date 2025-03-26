@@ -43,22 +43,21 @@ Works with [Google Sheets](https://sheets.google.com/),
 <br />
 
 
-### manual installation
+## usage (manual)
 
-```bash
-$ virtualenv ./.venv/
-$ . ./.venv/bin/activate
-$ pip install --upgrade pip
-$ pip install -r requirements.txt
-```
+* installation
+    ```bash
+    $ virtualenv ./.venv/
+    $ . ./.venv/bin/activate
+    $ pip install --upgrade pip
+    $ pip install -r requirements.txt
+    ```
 
-
-### manual quickstart
-
-```bash
-$ python glm50c.py
-Usage: glm50c.py <bluetooth_address>
-```
+* quickstart
+    ```bash
+    $ python glm50c.py
+    Usage: glm50c.py <bluetooth_address>
+    ```
 
 <br />
 
