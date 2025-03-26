@@ -77,14 +77,12 @@ class Main (object):
             return False
 
         ui = UInput()
-
         for digit in str(value):
             try:
                 ui.write(e.EV_KEY, self.keymapping[digit], 1)
                 ui.write(e.EV_KEY, self.keymapping[digit], 0)
             except KeyError:
                 pass
-
         ui.write(e.EV_KEY, e.KEY_ENTER, 1)
         ui.write(e.EV_KEY, e.KEY_ENTER, 0)
         ui.syn()
@@ -125,9 +123,17 @@ if __name__ == "__main__":
         print("Usage: %s <bluetooth_address>\n" % sys.argv[0])
         if sys.platform == "linux":
             try:
+                subprocess.run(
+                    "bluetoothctl power on".split(),
+                    capture_output=True,
+                )
+                try:
+                    subprocess.run("bluetoothctl scan on".split(), timeout=6)
+                except subprocess.TimeoutExpired:
+                    print()
                 result = subprocess.run(
                     "bluetoothctl devices".split(),
-                    capture_output=True
+                    capture_output=True,
                 )
                 print(result.stdout.decode())
             except FileNotFoundError:
