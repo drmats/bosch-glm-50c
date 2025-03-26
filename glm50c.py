@@ -57,7 +57,7 @@ class Main (object):
             sys.exit()
 
         signal.signal(signal.SIGINT, lambda _a, _b: self.exit())
-        print("ctrl+C to exit")
+        print("press [ctrl+C] to exit")
 
         self.process_measurements()
 
@@ -66,7 +66,7 @@ class Main (object):
         if self.socket:
             self.socket.close()
         if exit_code == 0:
-            print("Bye!")
+            print("\nBye!")
         sys.exit(exit_code)
 
 
@@ -80,8 +80,8 @@ class Main (object):
 
         for digit in str(value):
             try:
-                ui.write(e.EV_KEY, self.keymapping[digit], 0)
                 ui.write(e.EV_KEY, self.keymapping[digit], 1)
+                ui.write(e.EV_KEY, self.keymapping[digit], 0)
             except KeyError:
                 pass
 
