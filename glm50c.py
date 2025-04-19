@@ -38,6 +38,7 @@ class Main (object):
         ".": e.KEY_DOT,
     }
 
+
     def __init__ (self, *args, **kwargs):
         self.address = kwargs.get("address", None)
         if self.address is None:
